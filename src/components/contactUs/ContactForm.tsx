@@ -1,9 +1,9 @@
 import { useForm } from "@formspree/react";
 import { useEffect, useState } from "react";
-import { Input } from "./ui/input";
-import { Card } from "./ui/card";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
+import { Input } from "../ui/input";
+import { Card } from "../ui/card";
+import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/button";
 import { Send } from "lucide-react";
 
 export default function ContactForm() {

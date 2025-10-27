@@ -286,6 +286,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Loader2, MapPin, Clock, Construction, XCircle } from "lucide-react";
+import { useAllEntities } from "@/hooks/use-query";
 
 // --- Project Type ---
 interface Project {
@@ -363,42 +364,64 @@ const fallbackProjects: Project[] = [
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const [activeIndex, setActiveIndex] = useState<{ [key: number]: number }>({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(5);
+  // const [total, setTotal] = useState(5);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const { data } = useAllEntities('projects', {
+    page: currentPage,
+    limit: pageSize,
+  });
+
+  console.log("projects:", data);
+   console.log("projects:", data?.data.length);
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const res = await fetch("/projects", { cache: "no-store" });
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setProjects(data.length ? data : fallbackProjects);
-      } catch (err) {
-        console.error("API fetch failed, using fallback data");
-        setError(true);
-        setProjects(fallbackProjects);
-      } finally {
-        setLoading(false);
+    try{
+      if (data?.data) {
+        console.log("length?")
+        // setProjects(data.data.length ? data.data : fallbackProjects);
+        setTotalPages(data.pagination.totalPages);
+        setPageSize(data.pagination?.pageSize || 5);
       }
-    };
-    fetchProjects();
-  }, []);
+      setProjects(data.data.length ? data.data : fallbackProjects);
+    } catch (err: any) {
+        // console.log("API fetch failed, using fallback data");
+        setError(err.message);
+        setProjects(fallbackProjects);
+    } finally {
+        setLoading(false);
+    }
+  }, [data?.data, currentPage, pageSize, totalPages]);
+
 
   // --- Loading ---
-  if (loading) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-        <Loader2 className="animate-spin text-orange-500 mb-4" size={36} />
-        <p>Loading projects...</p>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+  //       <Loader2 className="animate-spin text-orange-500 mb-4" size={36} />
+  //       <p>Loading projects...</p>
+  //     </div>
+  //   );
+  // }
+
+  // if (!loading && error) {
+  //   return (
+  //     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+  //       <XCircle size={50} className="text-red-500 mb-4" />
+  //       <p>{error}.</p>
+  //     </div>
+  //   );
+  // }
 
   // --- Not Found ---
   if (!loading && projects.length === 0) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-        <XCircle size={50} className="text-orange-500 mb-4" />
+        <XCircle size={50} className="text-primary mb-4" />
         <p className="text-lg">No projects found.</p>
       </div>
     );
@@ -420,7 +443,7 @@ export default function ProjectsPage() {
   };
 
   return (
-    <section className="bg-[#0a0a0a] text-white min-h-screen py-16">
+    <section id="projects" className="scroll-mt-24 bg-[#0a0a0a] text-white py-16">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-primary">Our Projects</h1>
@@ -430,7 +453,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Project Grid */}
-      <div className="max-w-7xl mx-auto grid gap-10 px-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container mx-auto px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => {
           const currentImg = p.gallery[activeIndex[p.id] ?? 0] || p.img;
           return (

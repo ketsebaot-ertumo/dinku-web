@@ -4,8 +4,8 @@
 
 'use client';
 
-import ContactForm from "@/components/ContactForm";
-import OfficeList from "@/components/OfficeList";
+import ContactForm from "@/components/contactUs/ContactForm";
+import OfficeList from "@/components/contactUs/OfficeList";
 import { useState } from "react";
 
 export interface Office {
@@ -17,40 +17,19 @@ export interface Office {
 
 export const offices: Office[] = [
   {
-    city: "New York",
-    email: "ny@example.com",
-    phone: "+1 555 0100",
-    address: "123 Broadway, New York, NY"
+    city: "Addis Ababa",
+    email: "addisababa@example.com",
+    phone: "+251 112 3456",
+    address: "123 Broadway, Addis Ababa, Ethiopia"
   },
   {
-    city: "London",
-    email: "ldn@example.com",
-    phone: "+44 20 7946 0958",
-    address: "456 Baker Street, London"
+    city: "Awassa",
+    email: "awassa@example.com",
+    phone: "+251 46 1234 5678",
+    address: "456 Baker Street, Awassa, Ethiopia"
   }
 ];
 
-// export default function ContactPage() {
-//   return (
-//     <div className="min-h-screen bg-gray-50 py-12 px-6 md:px-12">
-//       <h1 className="text-4xl font-bold text-center mb-4">Contact Us</h1>
-//       <p className="text-gray-600 text-center mb-12">We'd love to hear from you. Send us a message or visit our offices.</p>
-
-//       <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
-//         {/* Left: Offices */}
-//         <div className="flex-1">
-//           <h2 className="text-2xl font-semibold mb-6">Our Offices</h2>
-//           <OfficeList offices={offices} />
-//         </div>
-
-//         {/* Right: Contact Form */}
-//         <div className="flex-1">
-//           <ContactForm />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);

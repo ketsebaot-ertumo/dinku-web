@@ -156,8 +156,10 @@
 "use client";
 
 import Image from "next/image";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, XCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useAllEntities } from "@/hooks/use-query";
 
 interface TeamMember {
   id: number;
@@ -169,7 +171,7 @@ interface TeamMember {
   email?: string;
 }
 
-const team: TeamMember[] = [
+const teamFallbackData: TeamMember[] = [
   {
     id: 1,
     name: "Ketsebaot Ertumo",
@@ -209,6 +211,55 @@ const team: TeamMember[] = [
 ];
 
 export default function TeamSection() {
+  const [team, setTeam] = useState<TeamMember[]>(teamFallbackData);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(5);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const { data } = useAllEntities('teams', {
+    page: currentPage,
+    limit: pageSize,
+  });
+
+  useEffect(() => {
+    try{
+      if (data?.data && Array.isArray(data.data)) {
+        setTotalPages(data.pagination.totalPages);
+        setPageSize(data.pagination?.pageSize || 5);
+      }
+      setTeam(data.data.length ? data.data : teamFallbackData);
+    } catch (err) {
+        // console.log("API fetch failed, using fallback data");
+        setError(true);
+        setTeam(teamFallbackData);
+    } finally {
+        setLoading(false);
+    }
+  }, [data?.data, currentPage, pageSize, totalPages]);
+  
+  
+    // --- Loading ---
+    // if (loading) {
+    //   return (
+    //     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+    //       <Loader2 className="animate-spin text-orange-500 mb-4" size={36} />
+    //       <p>Loading projects...</p>
+    //     </div>
+    //   );
+    // }
+  
+    // --- Not Found ---
+    if (!loading && team.length === 0) {
+      return (
+        <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+          <XCircle size={50} className="text-primary mb-4" />
+          <p className="text-lg">No team member found.</p>
+        </div>
+      );
+    }
+
   return (
     <section id="team" className="scroll-mt-24 relative py-20 bg-gray-900 overflow-hidden">
       {/* Background glow */}
