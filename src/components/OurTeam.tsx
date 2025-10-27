@@ -210,12 +210,12 @@ const team: TeamMember[] = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="relative py-20 overflow-hidden">
+    <section id="team" className="scroll-mt-24 relative py-20 bg-gray-900 overflow-hidden">
       {/* Background glow */}
-      <div className="absolute inset-0 -z-10">
+      {/* <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-400/10 rounded-full blur-3xl"></div>
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-6 text-center">
         <motion.h2
@@ -223,12 +223,12 @@ export default function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-5xl font-semibold mb-4"
+          className="text-4xl font-bold mb-4 text-gray-300"
         >
-          Meet <span className="text-orange-500">Our Team</span>
+          Meet <span className="text-primary">Our Team</span>
         </motion.h2>
 
-        <p className="text-gray-600 max-w-2xl mx-auto mb-3 text-lg">
+        <p className="text-gray-500 max-w-2xl mx-auto mb-3 text-lg">
           A collective of creators, engineers, and innovators shaping the
           future of technology.
         </p>
@@ -259,15 +259,15 @@ export default function TeamSection() {
                     height={400}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-400/80 to-transparent p-4 text-left">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-800 to-transparent p-4 text-left">
                     <h5 className="text-lg font-semibold">{member.name}</h5>
                     <p className="text-primary text-base">{member.role}</p>
                   </div>
                 </div>
 
                 {/* Back Side */}
-                <div className="absolute inset-0 bg-gray-200 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl flex flex-col justify-center items-center px-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                  <h5 className="text-xl font-semibold mb-1">{member.name}</h5>
+                <div className="absolute inset-0 bg-gray-600 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl flex flex-col justify-center items-center px-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h5 className="text-xl font-semibold mb-1 text-gray-300">{member.name}</h5>
                   <p className="text-primary text-base mb-3">{member.role}</p>
                   <p className="text-gray-400 text-sm mb-5">{member.bio}</p>
 

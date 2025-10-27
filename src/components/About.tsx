@@ -70,7 +70,7 @@ export default function AboutCompany() {
   const [activeTab, setActiveTab] = useState("who");
 
   return (
-    <section id="about_h" className="py-12 relative">
+    <section id="about" className="scroll-mt-24 py-12 relative">
       <div className="container mx-auto px-6">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
@@ -79,7 +79,7 @@ export default function AboutCompany() {
 
         {/* Section Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-5xl font-semibold">
+          <h2 className="text-4xl font-bold">
             <span className="text-orange-500">About</span> Company
           </h2>
           <p className="mt-3 text-gray-600 text-lg">

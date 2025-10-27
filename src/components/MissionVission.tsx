@@ -1,6 +1,7 @@
 "use client";
 
 import { Lightbulb, Shield, Plug } from "lucide-react";
+import SectionDivider from "./SectionDivider";
 
 interface InfoSection {
   id: number;
@@ -35,20 +36,19 @@ const infoSections: InfoSection[] = [
 
 export default function Values() {
   return (
-    <section className="py-12 bg-gray-900 text-center text-white">
+    <section id="value" className="scroll-mt-24 py-12 text-center text-white">
       <div className="container mx-auto px-6 py-6">
         {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-5xl font-semibold">
+        <div className="text-center mb-12 text-gray-800">
+          <h2 className="text-4xl font-bold">
             Our <span className="text-primary">Mission</span>,{" "}
             <span className="text-primary">Vision</span> &{" "}
             <span className="text-primary">Values</span>
           </h2>
-          <span className="relative inline-flex items-center justify-center mt-3">
-            <span className="block w-12 h-[2px] bg-orange-500 mr-2"></span>
-            <span className="text-orange-500">●</span>
-            <span className="block w-12 h-[2px] bg-orange-500 ml-2"></span>
-          </span>
+          <p className="text-gray-500 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+            Real stories from real customers — see why professionals trust our services.
+          </p>
+          <SectionDivider />
         </div>
 
         {/* Info Sections */}
@@ -58,11 +58,11 @@ export default function Values() {
             return (
               <div
                 key={section.id}
-                className="bg-gray-800 rounded-md p-6 flex flex-col items-center md:items-start shadow hover:shadow-lg transition"
+                className="hover:scale-105 bg-gray-100 rounded-md p-6 flex flex-col items-center shadow hover:shadow-lg transition"
               >
-                <Icon className="w-10 h-10 text-orange-500 mb-4" />
-                <h3 className="text-2xl font-semibold mb-2">{section.title}</h3>
-                <p className="text-gray-300">{section.description}</p>
+                <Icon className="w-10 h-10 text-primary mb-4" />
+                <h3 className="text-2xl font-semibold mb-2 text-gray-600">{section.title}</h3>
+                <p className="text-gray-500 text-center">{section.description}</p>
               </div>
             );
           })}

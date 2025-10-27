@@ -367,76 +367,36 @@ interface Service {
 }
 
 const services: Service[] = [
-  // {
-  //   id: 1,
-  //   title: "ERP & Management Systems",
-  //   description:
-  //     "Custom ERP, HRM, CRM, and other management systems built for your business workflows.",
-  //   icon: Settings,
-  //   href: "#",
-  //   image: "/images/5.jpg",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Web & Mobile Apps",
-  //   description:
-  //     "Modern web and mobile app development for scalable and intuitive digital products.",
-  //   icon: Smartphone,
-  //   href: "#",
-  //   image: "/images/2.jpg",
-  // },
-  // {
-  //   id: 3,
-  //   title: "UI/UX & Branding",
-  //   description:
-  //     "User interface and experience design, logo creation, and visual identity systems.",
-  //   icon: Palette,
-  //   href: "#",
-  //   image: "/images/5.jpg",
-  // },
-  // {
-  //   id: 4,
-  //   title: "Infographics & Design",
-  //   description:
-  //     "Visual storytelling with custom infographics, business cards, and presentation materials.",
-  //   icon: PenTool,
-  //   href: "#",
-  //   image: "/images/5.jpg",
-  // },
   {
     id: 5,
-    title: "Electrical & Smart Systems",
-    description:
-      "IoT-based and electrical solutions for automation, safety, and reliability.",
+    title: "Substation Construction",
+    description: "Professional substation construction for reliable energy distribution.",
     icon: Plug,
-    href: "#",
+    href: "#service",
     image: "/images/sub.jpg",
   },
   {
     id: 6,
-    title: "Security & Access Systems",
-    description:
-      "Installation and software integration for CCTV, biometric, and alarm systems.",
+    title: "High Power Tower Construction",
+    description: "Engineering high-power towers with safety and efficiency.",
     icon: Shield,
-    href: "#",
+    href: "#service",
     image: "/images/4.jpg",
   },
   {
     id: 7,
-    title: "Consulting & Support",
-    description:
-      "Professional advice, maintenance, and support for all your tech solutions.",
+    title: "15kV/33kV Power Distribution",
+    description: "Modern power distribution and automation solutions for industrial needs.",
     icon: Lightbulb,
-    href: "#",
+    href: "#service",
     image: "/images/4.jpg",
   },
   {
     id: 8,
-    title: "Heating & Power Systems",
-    description:
-      "Smart heating, power, and renewable energy control systems integration.",
+    title: "Industrial Automation",
+    description: "Modern power distribution and automation solutions for industrial needs.",
     icon: Flame,
-    href: "#",
+    href: "#service",
     image: "/images/4.jpg",
   },
 ];
@@ -445,12 +405,8 @@ export default function ServicesSection() {
   const [activeService, setActiveService] = useState<Service>(services[0]);
 
   return (
-    <section id="serv_h" className="py-12 bg-white">
+    <section id="service" className="scroll-mt-24 py-12 bg-white">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-10">
-        {/* <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-400/10 rounded-full blur-3xl"></div>
-        </div> */}
 
         {/* Left content */}
         <div className="lg:w-2/3">
@@ -493,9 +449,10 @@ export default function ServicesSection() {
                   <div>
                     <h5
                       className={`font-semibold text-2xl ${
-                        isActive ? "text-orange-600" : ""
+                        isActive ? "text-primary" : ""
                       }`}
                     >
+                      {/* {service.title} */}
                       <a href={service.href}>{service.title}</a>
                     </h5>
                     <p className="text-gray-600 text-base">
