@@ -1,15 +1,18 @@
 import { notFound } from "next/navigation";
 
 interface BlogPost {
+  id: string;
   title: string;
   date: string;
   author: string;
   content: string;
   image: string;
+  slug: string;
 }
 
 const fallbackPosts: Record<string, BlogPost> = {
   "smart-energy-systems": {
+    id: "1",
     title: "Powering the Future: Smart Energy Systems",
     date: "October 10, 2025",
     author: "Admin",
@@ -18,12 +21,14 @@ const fallbackPosts: Record<string, BlogPost> = {
       <p>Through IoT and automation, the efficiency of power grids is increasing dramatically.</p>
     `,
     image: "/images/4.jpg",
+    slug: "smart-energy-systems",
   },
   // add more fallback posts
 };
 
-export default async function BlogDetail({ params }: { params: { slug: string } }) {
-  const post = fallbackPosts[params.slug];
+export default async function BlogDetail({ params }: { params: { id: string } }) {
+  //  const post = fallbackPosts[params.id];
+  const post = Object.values(fallbackPosts).find(post => post.id === params.id);
 
   if (!post) return notFound();
 
