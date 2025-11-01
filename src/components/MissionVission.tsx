@@ -72,7 +72,7 @@ export default function Values() {
         <div className="mt-8">
           <a
             href="/contact"
-            className="inline-block bg-orange-500 text-white px-6 py-3 rounded-md text-xl font-semibold shadow hover:bg-orange-600 transition"
+            className="inline-block bg-primary text-white px-6 py-3 rounded-md text-xl font-semibold shadow hover:bg-orange-600 transition"
           >
             Contact Now
           </a>

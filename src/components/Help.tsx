@@ -7,8 +7,8 @@ export default function Help() {
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl font-semibold">
           Do you need{" "}
-          <span className="text-orange-500 font-bold">help</span> from{" "}
-          <span className="text-orange-500 font-bold">power?</span>
+          <span className="text-primary font-bold">help</span> from{" "}
+          <span className="text-primary font-bold">power?</span>
         </h2>
 
         {/* Subtext */}
@@ -20,7 +20,7 @@ export default function Help() {
         <div className="mt-6">
           <a
             href="/contact"
-            className="inline-block bg-orange-500 text-white px-6 py-3 rounded-md text-sm font-bold uppercase shadow hover:bg-orange-600 transition"
+            className="inline-block bg-primary text-white px-6 py-3 rounded-md text-sm font-bold uppercase shadow hover:bg-orange-600 transition"
           >
             Contact Now
           </a>

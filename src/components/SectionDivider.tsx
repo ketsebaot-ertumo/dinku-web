@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 interface SectionDividerProps {
-  /** Color of the lines and dot (default: orange-500) */
+  /** Color of the lines and dot (default: primary) */
   color?: string;
   /** Size (width of the lines) */
   lineWidth?: string;

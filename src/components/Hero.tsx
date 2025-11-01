@@ -76,9 +76,9 @@ export default function CenterCarousel() {
                 <p className="text-gray-300 text-lg">{slides[current].text}</p>
                 <a
                   href="#"
-                  className="inline-block mt-4 bg-primary text-white font-bold px-6 py-3 rounded-2xl shadow-md hover:bg-white hover:text-black transition"
+                  className="inline-block mt-4 bg-primary text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-white hover:text-black transition"
                 >
-                  READ MORE →
+                  Read More →
                 </a>
               </div>
 

@@ -41,7 +41,7 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Call API or serverless function
-    console.log(formData);
+    // console.log(formData);
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
   };

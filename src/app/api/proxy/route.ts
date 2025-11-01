@@ -3,9 +3,8 @@
 import { NextResponse } from 'next/server';
 import axios, { AxiosError } from 'axios';
 
-const isDev = process.env.NODE_ENV === 'development';
-// console.log('API Proxy isDev:', isDev,"\n", process.env.NODE_ENV);
 
+const isDev = process.env.NODE_ENV === 'development';
 
 // GET
 export async function GET(request: Request) {

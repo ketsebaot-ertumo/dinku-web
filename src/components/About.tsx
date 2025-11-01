@@ -16,17 +16,17 @@ const tabs = [
           archite.
         </p>
         <p className="mt-3 flex items-center">
-          <span className="text-orange-500 mr-2">●</span> Morbi fermentum felis
+          <span className="text-primary mr-2">●</span> Morbi fermentum felis
           nec
         </p>
         <p className="flex items-center">
-          <span className="text-orange-500 mr-2">●</span> Kermentum felis nec
+          <span className="text-primary mr-2">●</span> Kermentum felis nec
           gravida tempus.
         </p>
         <h6 className="mt-6">
           <a
             href="/contact"
-            className="text-xl inline-block bg-primary text-white px-6 py-3 rounded-md border border-primary font-semibold hover:bg-transparent hover:text-orange-500 transition"
+            className="text-xl inline-block bg-primary text-white px-6 py-3 rounded-md border border-primary font-semibold hover:bg-transparent hover:text-primary transition"
           >
             Contact Now
           </a>
@@ -46,17 +46,17 @@ const tabs = [
           scelerisque. Morbi faucibus eros mattis tellus scelerisque.
         </p>
         <p className="mt-3 flex items-center">
-          <span className="text-orange-500 mr-2">●</span> Test fermentum felis
+          <span className="text-primary mr-2">●</span> Test fermentum felis
           nec
         </p>
         <p className="flex items-center">
-          <span className="text-orange-500 mr-2">●</span> Fermentum felis nec
+          <span className="text-primary mr-2">●</span> Fermentum felis nec
           gravida tempus.
         </p>
         <h6 className="mt-6">
           <a
             href="/contact"
-            className="text-xl inline-block bg-orange-500 text-white px-6 py-3 rounded-md border border-primary font-semibold hover:bg-transparent hover:text-orange-500 transition"
+            className="text-xl inline-block bg-primary text-white px-6 py-3 rounded-md border border-primary font-semibold hover:bg-transparent hover:text-primary transition"
           >
             Contact Us
           </a>
@@ -73,23 +73,23 @@ export default function AboutCompany() {
     <section id="about" className="scroll-mt-24 py-12 relative">
       <div className="container mx-auto px-6">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-400/10 rounded-full blur-3xl"></div>
         </div>
 
         {/* Section Heading */}
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold">
-            <span className="text-orange-500">About</span> Company
+            <span className="text-primary">About</span> Company
           </h2>
           <p className="mt-3 text-gray-600 text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm
             tempor
           </p>
           <span className="relative inline-flex items-center justify-center mt-3">
-            <span className="block w-12 h-[2px] bg-orange-500 mr-2"></span>
-            <span className="text-orange-500">●</span>
-            <span className="block w-12 h-[2px] bg-orange-500 ml-2"></span>
+            <span className="block w-12 h-[2px] bg-primary mr-2"></span>
+            <span className="text-primary">●</span>
+            <span className="block w-12 h-[2px] bg-primary ml-2"></span>
           </span>
         </div>
 
@@ -104,7 +104,7 @@ export default function AboutCompany() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-4 py-2 text-2xl font-semibold transition ${
                     activeTab === tab.id
-                      ? "text-black border-b-4 border-orange-500"
+                      ? "text-black border-b-4 border-primary"
                       : "text-gray-500 hover:text-black"
                   }`}
                 >

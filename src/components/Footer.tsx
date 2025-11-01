@@ -27,25 +27,25 @@ type FooterProps = {
 };
 
 const data: FooterData = {
-  companyName: "Electric Co.",
+  companyName: "Lantem Lights",
   description:
     "Delivering reliable electrical infrastructure, automation, and power distribution solutions with innovation at the core.",
   address: "123 Powerline Street, Energy City, Country",
   phone: "+123 456 7890",
   email: "info@electricco.com",
   socials: [
-    { name: "Facebook", href: "#", icon: Facebook },
-    { name: "Twitter", href: "#", icon: Twitter },
-    { name: "LinkedIn", href: "#", icon: Linkedin },
-    { name: "Instagram", href: "#", icon: Instagram },
+    { name: "Facebook", href: "https://www.facebook.com/", icon: Facebook },
+    { name: "Twitter", href: "https://www.twitter.com/", icon: Twitter },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/", icon: Linkedin },
+    { name: "Instagram", href: "https://www.instagram.com/", icon: Instagram },
   ],
   links: [
     { name: "About Us", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
     { name: "Team", href: "#team" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ],
   services: [
     "Substation Construction",
@@ -116,7 +116,7 @@ export default function Footer({ brand = "Dinku", year = new Date().getFullYear(
                         key={s.name}
                         href={s.href}
                         aria-label={s.name}
-                        className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-orange-500 transition"
+                        className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition"
                         >
                         <s.icon className="w-4 h-4 text-white" />
                         </Link>
@@ -162,12 +162,12 @@ export default function Footer({ brand = "Dinku", year = new Date().getFullYear(
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full sm:flex-1 px-4 py-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                            className="w-full sm:flex-1 px-4 py-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                         <button
                             type="submit"
                             disabled={status === "loading"}
-                            className="mt-3 sm:mt-0 sm:ml-2 px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded-md font-semibold text-white transition disabled:opacity-50"
+                            className="mt-3 sm:mt-0 sm:ml-2 px-6 py-2 bg-primary hover:bg-orange-600 rounded-md font-semibold text-white transition disabled:opacity-50"
                         >
                             {status === "loading" ? "..." : "Subscribe"}
                         </button>
@@ -185,13 +185,14 @@ export default function Footer({ brand = "Dinku", year = new Date().getFullYear(
             {/* Divider */}
             <div className="border-t border-gray-800 pt-10 lg:pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
                 <p>© {new Date().getFullYear()} {data.companyName}. All rights reserved.</p>
+                <p>Developed By Ketsebaot Ertumo</p>
                 <div className="mt-3 md:mt-0 space-x-4">
-                    <Link href="#" className="hover:text-orange-500 transition">
+                  <Link href="#" className="hover:text-primary transition">
                     Privacy Policy
-                    </Link>
-                    <Link href="#" className="hover:text-orange-500 transition">
+                  </Link>
+                  <Link href="#" className="hover:text-primary transition">
                     Terms of Service
-                    </Link>
+                  </Link>
                 </div>
             </div>
         </div>

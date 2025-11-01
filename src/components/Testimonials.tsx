@@ -135,7 +135,7 @@ export default function TestimonialsCarousel() {
                           key={i}
                           className={clsx(
                             "w-4 h-4 transition-colors",
-                            i < t.rating ? "text-orange-500" : "text-gray-300"
+                            i < t.rating ? "text-primary" : "text-gray-300"
                           )}
                         />
                       ))}
@@ -146,7 +146,7 @@ export default function TestimonialsCarousel() {
                   </p>
                   <div className="text-left">
                     <h5 className="font-semibold text-lg text-gray-800">{t.name}</h5>
-                    <p className="text-orange-500 text-sm">{t.role}</p>
+                    <p className="text-primary text-sm">{t.role}</p>
                   </div>
                 </div>
               ))}

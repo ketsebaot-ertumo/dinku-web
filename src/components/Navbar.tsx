@@ -83,9 +83,9 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center px-6 py-8">
         {/* Logo */}
         <Link href="/" className="flex items-center text-4xl font-bold text-gray-300">
-          {/* <span className="text-orange-500 mr-2">💡</span>  */}
+          {/* <span className="text-primary mr-2">💡</span>  */}
           <img src="/logo.png" alt="Latern Lights" className="w-16 md:w-20 md:mr-2" />
-          <p className="text-3xl md:text-5xl">Latern Lights</p>
+          <p className="text-3xl">Latern Lights</p>
         </Link>
 
         {/* Mobile Toggle */}
@@ -208,8 +208,8 @@ export default function Navbar() {
         {/* Right Section */}
         <div className="hidden lg:flex items-center gap-6">
           <div className="flex items-center gap-2 font-semibold">
-            <Headphones className="text-orange-500" size={20} />
-            <a href="tel:+1234567890">+(123) 456-7890</a>
+            <Headphones className="text-primary" size={20} />
+            <a href="tel:+1234567890">+(251) 91-234-5678</a>
           </div>
         </div>
       </div>

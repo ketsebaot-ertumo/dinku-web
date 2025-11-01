@@ -148,7 +148,7 @@
 //   if (!loading && projects.length === 0) {
 //     return (
 //       <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-//         <XCircle size={50} className="text-orange-500 mb-4" />
+//         <XCircle size={50} className="text-primary mb-4" />
 //         <p className="text-lg">No projects found.</p>
 //       </div>
 //     );
@@ -158,7 +158,7 @@
 //     <section id="projects" className="scroll-mt-24 bg-[#0a0a0a] text-white min-h-screen py-16">
 //       {/* Header */}
 //       <div className="text-center mb-12">
-//         <h1 className="text-4xl font-bold text-orange-500">Our Projects</h1>
+//         <h1 className="text-4xl font-bold text-primary">Our Projects</h1>
 //         <p className="text-gray-400 mt-2 max-w-2xl mx-auto">
 //           Showcasing excellence in electrical engineering and innovation across industries.
 //         </p>
@@ -171,7 +171,7 @@
 //             key={p.id}
 //             whileHover={{ y: -8 }}
 //             transition={{ duration: 0.3 }}
-//             className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-orange-500/20 transition"
+//             className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-primary/20 transition"
 //           >
 //             <div className="relative">
 //               <img
@@ -179,7 +179,7 @@
 //                 alt={p.title}
 //                 className="w-full h-56 object-cover"
 //               />
-//               <span className="absolute top-3 left-3 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+//               <span className="absolute top-3 left-3 bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">
 //                 {p.category}
 //               </span>
 //             </div>
@@ -208,7 +208,7 @@
 //                 {p.technologies.map((tech, idx) => (
 //                   <span
 //                     key={idx}
-//                     className="bg-orange-500/10 text-orange-400 text-xs px-3 py-1 rounded-full"
+//                     className="bg-primary/10 text-orange-400 text-xs px-3 py-1 rounded-full"
 //                   >
 //                     {tech}
 //                   </span>
@@ -376,13 +376,10 @@ export default function ProjectsPage() {
     limit: pageSize,
   });
 
-  console.log("projects:", data);
-   console.log("projects:", data?.data.length);
 
   useEffect(() => {
     try{
       if (data?.data) {
-        console.log("length?")
         // setProjects(data.data.length ? data.data : fallbackProjects);
         setTotalPages(data.pagination.totalPages);
         setPageSize(data.pagination?.pageSize || 5);
@@ -402,7 +399,7 @@ export default function ProjectsPage() {
   // if (loading) {
   //   return (
   //     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-  //       <Loader2 className="animate-spin text-orange-500 mb-4" size={36} />
+  //       <Loader2 className="animate-spin text-primary mb-4" size={36} />
   //       <p>Loading projects...</p>
   //     </div>
   //   );
@@ -461,7 +458,7 @@ export default function ProjectsPage() {
               key={p.id}
               whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
-              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-md hover:shadow-orange-500/20"
+              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-md hover:shadow-primary/20"
             >
               {/* Image Slider */}
               <div className="relative">
@@ -486,7 +483,7 @@ export default function ProjectsPage() {
                     </button>
                   </>
                 )}
-                <span className="absolute top-3 left-3 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                <span className="absolute top-3 left-3 bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">
                   {p.category}
                 </span>
               </div>
@@ -516,7 +513,7 @@ export default function ProjectsPage() {
                   {p.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="bg-orange-500/10 text-orange-400 text-xs px-3 py-1 rounded-full"
+                      className="bg-primary/10 text-orange-400 text-xs px-3 py-1 rounded-full"
                     >
                       {tech}
                     </span>

@@ -104,7 +104,7 @@ export default function TeamSection() {
     <section id="team" className="scroll-mt-24 relative py-20 bg-gray-900 overflow-hidden">
       {/* Background glow */}
       {/* <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-72 h-72 bg-orange-400/10 rounded-full blur-3xl"></div>
       </div> */}
 
@@ -125,9 +125,9 @@ export default function TeamSection() {
         </p>
 
         <span className="relative inline-flex items-center justify-center mb-12">
-            <span className="block w-12 h-[2px] bg-orange-500 mr-2"></span>
+            <span className="block w-12 h-[2px] bg-primary mr-2"></span>
             <span className="text-primary">●</span>
-            <span className="block w-12 h-[2px] bg-orange-500 ml-2"></span>
+            <span className="block w-12 h-[2px] bg-primary ml-2"></span>
         </span>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
