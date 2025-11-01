@@ -19,7 +19,7 @@ const slides: Slide[] = [
     title: "Need any help we are ready for you",
     subtitle: "Welcome to Electric",
     text: "Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos voluptatibus habitant?",
-    img: "/images/2.jpg",
+    img: "/images/sub.jpg",
   },
   {
     id: 1,
@@ -33,7 +33,7 @@ const slides: Slide[] = [
     title: "Future Electric Power and Renewables",
     subtitle: "Welcome to Electric",
     text: "Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos voluptatibus habitant?",
-    img: "/images/4.jpg",
+    img: "/images/sub.jpg",
   },
 ];
 

@@ -121,7 +121,7 @@ export default function AboutCompany() {
           {/* Right Image */}
           <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden rounded-md shadow-lg">
             <Image
-              src="/images/4-1.jpg"
+              src="/images/sub.jpg"
               alt="About Company"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
